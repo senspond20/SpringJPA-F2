@@ -33,7 +33,7 @@
 => 도메인 모델에서는 Service 는 트랜잭션과 도메인 간의 순서만 보장해준다.
 
 
-### 모데인 모델 방식에서는 bean을 주입할 때 @AutoWried를 사용하지 않는 방법도 있다.
+### 모데인 모델 방식에서는 bean을 주입할 때 @AutoWried를 사용하지 않는 방법을 사용한다.
 
 => bean 주입을 @Autowired 나 setter 가 아닌 생성자로 주입하는 방식을 사용
 => @RequiredArgsConstructor 에서 해결해준다.
@@ -53,4 +53,10 @@ public class PostsApiController {
 
 }
 ```
-==> 하지만 단점도 있다.
+Constructor based Injection (생성자를 통한 주입)
+setter 를 없애고, 생성자를 이용해서 주입한다.
+
+https://yaboong.github.io/spring/2019/08/29/why-field-injection-is-bad/
+순환참조 오류 
+
+

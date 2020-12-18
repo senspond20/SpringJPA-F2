@@ -1,9 +1,12 @@
 package com.sens.myapp.service;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
 
+import com.sens.myapp.domain.Posts;
 import com.sens.myapp.repository.PostsRepository;
 import com.sens.myapp.web.dto.PostsSaveRequestDto;
 
@@ -16,7 +19,12 @@ public class PostsService {
 	private final PostsRepository postsRepository;
 	
 	@Transactional
-	public Long save(PostsSaveRequestDto requestDto) {
-		return postsRepository.save(requestDto.toEntity().getId());
+	public Posts save(PostsSaveRequestDto requestDto) {
+		return postsRepository.save(requestDto.toEntity());
+	}
+	
+	@Transactional
+	public List<Posts> findAll(){
+		return postsRepository.findAll();
 	}
 }
