@@ -33,15 +33,14 @@
 => 도메인 모델에서는 Service 는 트랜잭션과 도메인 간의 순서만 보장해준다.
 
 
-## 모데인 모델 방식에서는 bean을 주입할 때 @AutoWried를 사용하지 않는다.
+### 모데인 모델 방식에서는 bean을 주입할 때 @AutoWried를 사용하지 않는 방법도 있다.
 
 => bean 주입을 @Autowired 나 setter 가 아닌 생성자로 주입하는 방식을 사용
-
 => @RequiredArgsConstructor 에서 해결해준다.
 => 해당 클래스의 의존성 관계가 변경될 때마다 생성자 코드를 계속해서 수정하는 번거로움이 해결된다.
 
 ```java
-@RequiredArgsConstructor // final 붙은 인자만 생성자 생성 -> 신개념 bean 주입
+@RequiredArgsConstructor // final 붙은 인자만 생성자 생성 -> 또다른 bean 주입
 @RestController
 public class PostsApiController {
 	
@@ -54,3 +53,4 @@ public class PostsApiController {
 
 }
 ```
+==> 하지만 단점도 있다.
