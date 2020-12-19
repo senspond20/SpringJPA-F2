@@ -1,4 +1,4 @@
-package com.sens.myapp.api;
+package com.sens.myapp.web;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
